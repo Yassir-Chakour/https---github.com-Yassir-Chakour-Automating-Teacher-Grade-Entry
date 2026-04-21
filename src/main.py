@@ -1,25 +1,23 @@
-from unittest import result
+from graph import app
 
-from nodes.database import fetch_students_node
-from nodes.processor import proccess_data_node
-from utils.google_client import google_client
-from nodes.sheets import sheets_managment
 
-initial_state = {
-    "students": [
-        {"student_name": "Yassir", "class_name": "shinobi"},
-        {"student_name": "Sarah", "class_name": "shinobi"},
-        {"student_name": "Ali", "class_name": "9bi7"},
-        {"student_name": "Marwan", "class_name": "xwiya"},
-    ],
-    "class_list": ['shinobi', '9bi7', 'xwiya'],
-    "logs": []
-}
+def run_agent():
+    initial_state = {
+        "students": [],
+        "class_list": [],
+        "logs": []
+    }
 
-# result = fetch_students_node(initial_state)
-# result = proccess_data_node(result)
-# result = google_client()
-result = sheets_managment(initial_state)
+    print("🚀 --- AGENT STARTING ---")
 
-print("Final State:")
-print(result)
+    final_result = app.invoke(initial_state)
+
+    print("✅ --- AGENT FINISHED ---")
+
+    print(f"Processed {len(final_result['class_list'])} classes.")
+    for log in final_result.get("logs", []):
+        print(f"Log: {log}")
+
+
+if __name__ == "__main__":
+    run_agent()
