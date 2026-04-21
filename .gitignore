@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.env
+
+# Google Credentials (CRITICAL)
+credentials.json
+
+# Poetry
+.python-version
+poetry.lock
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
