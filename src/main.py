@@ -6,11 +6,16 @@ from utils.google_client import google_client
 from nodes.sheets import sheets_managment
 
 initial_state = {
-    "students": [],
+    "students": [
+        {"student_name": "Yassir", "class_name": "shinobi"},
+        {"student_name": "Sarah", "class_name": "shinobi"},
+        {"student_name": "Ali", "class_name": "9bi7"},
+        {"student_name": "Marwan", "class_name": "xwiya"},
+    ],
     "class_list": ['shinobi', '9bi7', 'xwiya'],
     "logs": []
 }
-#
+
 # result = fetch_students_node(initial_state)
 # result = proccess_data_node(result)
 # result = google_client()
