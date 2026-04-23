@@ -11,7 +11,7 @@ def sheets_managment(state: AgentState):
     for cls in classes:
         if cls not in existing_titles:
             worksheet = sh.add_worksheet(title=cls, rows=100, cols=100)
-            data_to_write = [['Student Name', 'Grades']]
+            data_to_write = [['id', 'Student Name', 'Grades']]
 
             for student in students:
                 if student['class_name'] == cls:

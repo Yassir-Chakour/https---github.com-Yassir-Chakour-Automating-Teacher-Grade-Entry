@@ -6,7 +6,7 @@ def fetch_students_node(state: AgentState):
     supabase = get_supabase_client()
 
     try:
-        query = supabase.table("school_data").select("student_name, class_name")
+        query = supabase.table("school_data").select("id, student_name, class_name")
         students = query.execute()
 
         print(f"Successfully fetched {len(students.data)} students")
