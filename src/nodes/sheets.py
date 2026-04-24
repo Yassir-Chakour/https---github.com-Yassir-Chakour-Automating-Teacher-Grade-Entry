@@ -15,7 +15,7 @@ def sheets_managment(state: AgentState):
 
             for student in students:
                 if student['class_name'] == cls:
-                    data_to_write.append([student['student_name'], ""])
+                    data_to_write.append([student['id'], student['student_name'], ""])
 
             worksheet.update('A1', data_to_write)
             print(f"Worksheet {cls} created with {len(data_to_write) - 1} students.")
